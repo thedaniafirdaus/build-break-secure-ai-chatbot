@@ -98,7 +98,10 @@ def ask(history: list, user_message: str) -> str:
         )
         history.append({"role": "assistant", "content": response.content})
         if response.stop_reason != "tool_use":
-            return "".join(b.text for b in response.content if b.type == "text")
+            text = "".join(b.text for b in response.content if b.type == "text")
+            if not text:
+                print(f"   [SYSTEM] Empty reply. stop_reason={response.stop_reason} content={response.content}")
+            return text
         results = []
         for block in response.content:
             if block.type == "tool_use":
