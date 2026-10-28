@@ -93,7 +93,7 @@ def ask(history: list, user_message: str) -> str:
     history.append({"role": "user", "content": user_message})
     while True:
         response = client.messages.create(
-            model=MODEL, max_tokens=500, system=SYSTEM_PROMPT,
+            model=MODEL, max_tokens=1500, system=SYSTEM_PROMPT,
             tools=TOOLS, messages=history,
         )
         history.append({"role": "assistant", "content": response.content})
