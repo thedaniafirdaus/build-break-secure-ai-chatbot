@@ -1,0 +1,4 @@
+proof,runs,attack_succeeded,blocked,notes
+C5 rate limiting,10,5,5,Expected 5 allowed then 5 blocked (5 per minute limit)
+B2 poisoning via kb/,5,0,5,Poisoned file rejected by allowlist + hash check
+Defence in depth (allowlist bypassed + correct email),5,0,5,5 refund(s) sent to manager approval queue instead of paid
