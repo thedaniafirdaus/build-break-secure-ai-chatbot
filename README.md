@@ -10,6 +10,8 @@ An LLM-powered support agent for a **fictional** UK homeware shop, **Brightwell 
 - **Defence in depth:** even with the document control deliberately bypassed *and* the attacker knowing the real customer email, refunds stayed at **0/5** — the AI was fooled every time, but the code made the decision.
 - Genuine customers are still served (3/3 functional tests pass). Total API cost of the exercise: a few cents.
 
+📄 **[Read the leadership security report (REPORT.md)](REPORT.md)** — risks, business impact and recommendations in plain English.
+
 ## Why this matters
 Small businesses are connecting chatbots to their documents and giving them the power to act — issuing refunds, looking up customer data. This project shows what goes wrong when security is left to the model's judgement, and how to fix it with controls an attacker can't talk their way past.
 
