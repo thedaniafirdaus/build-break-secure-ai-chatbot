@@ -5,3 +5,5 @@ __pycache__/
 *.db
 .DS_Store
 refunds_log.txt
+approval_queue.txt
+security_events.log
