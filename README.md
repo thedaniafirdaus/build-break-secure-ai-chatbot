@@ -12,6 +12,8 @@ An LLM-powered support agent for a **fictional** UK homeware shop, **Brightwell 
 
 📄 **[Read the leadership security report (REPORT.md)](REPORT.md)** — risks, business impact and recommendations in plain English.
 
+🗂️ **[AI governance pack (governance/)](governance/)** — company-wide AI use-case register, one-page Responsible AI Use Policy, and alignment with the NIST AI RMF and ISO/IEC 42001.
+
 ## Why this matters
 Small businesses are connecting chatbots to their documents and giving them the power to act — issuing refunds, looking up customer data. This project shows what goes wrong when security is left to the model's judgement, and how to fix it with controls an attacker can't talk their way past.
 
@@ -93,6 +95,13 @@ flowchart LR
 - The output filter is pattern-based; the real fix is keeping secrets out of the model's context, which v2 does.
 - Small run counts (5) and one model tested (`claude-haiku-5-5`); results may differ on other models.
 
+## AI governance
+The chatbot is one of ten AI uses at Brightwell Home. To govern all of them, I added a lightweight governance pack:
+
+- **[AI use-case register](governance/ai-use-case-register.csv)** — 10 AI uses (this agent, Copilot and ChatGPT for marketing, HR CV screening, fraud scoring, shadow AI and more) with data used, risk tier, key risks, controls, owner and review date.
+- **[Responsible AI Use Policy](governance/responsible-ai-use-policy.md)** — one page, plain English: approved tools, data never to put into AI, human oversight, approval route by risk tier, who to ask.
+- **[Framework alignment](governance/framework-alignment.md)** — how the register, policy and red-team work map to the NIST AI RMF (Govern, Map, Measure, Manage) and ISO/IEC 42001, plus the gaps a full management system would still need. Aligned with, not certified.
+
 ## Repository
 ```
 chatbot.py                 v1 – deliberately insecure baseline
@@ -106,6 +115,7 @@ attacks/run_c5.py          C5 consumption test
 attacks/run_all.py         re-runs every attack against v1 and v2
 attacks/run_secure_proofs.py  rate limit, B2 repeatability, defence-in-depth proofs
 attacks/evidence/          CSV results and full transcripts
+governance/                AI use-case register, Responsible AI Use Policy, NIST AI RMF / ISO 42001 alignment
 ```
 
 ## Run it
